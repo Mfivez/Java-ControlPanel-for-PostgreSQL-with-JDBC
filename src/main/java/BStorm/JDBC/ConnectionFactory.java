@@ -152,4 +152,8 @@ public class ConnectionFactory {
         }
     }
 
+    public static String buildSqlErrorMessage(SQLException e) {
+        return String.format("Data access failed: %s (SQLState: %s, ErrorCode: %d)",
+                e.getMessage(), e.getSQLState(), e.getErrorCode());
+    }
 }

@@ -138,7 +138,7 @@ public class ControlPanel {
         sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez le nom de la table cible : "));
         String tableName = sc.nextLine();
-        statementFactory.getColumnList(dbNamePosition, tableName);
+        statementFactory.getColumnList(tableName);
         System.out.println(ColPrinter.brightBlue("Entrez le nom des colonnes cibles (col1, col2, ...) : "));
         String columnNames = sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez les valeurs à ajouter (val1, val2 & val3, val4 & ...): "));
@@ -165,7 +165,7 @@ public class ControlPanel {
         sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez le nom de la table cible : "));
         String tableName = sc.nextLine();
-        statementFactory.getColumnList(dbNamePosition, tableName);
+        statementFactory.getColumnList(tableName);
         System.out.println(ColPrinter.brightBlue("Entrez le nom des colonnes et des valeurs cibles : "));
         String columnNameAndValue = sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez la condition de selection : "));

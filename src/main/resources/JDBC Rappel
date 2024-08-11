@@ -1,0 +1,166 @@
+### 1. Qu'est-ce qu'une API Java Standard :
+
+un ensemble de classes, interfaces et bibliothèques fournies
+par le JDK pour réaliser des tâches courantes sans avoir à
+écrire tout le code à partir de zéro.
+
+#################################################################################
+
+### 2. Qu'est-ce que JDBC
+
+Une API Java Standard qui agit comme intermédiaire entre une appli
+Java et une base de données.
+
+#################################################################################
+
+### 3. Que permet cette API :
+
+1. Se connecter à une BD en établissant une connexion, via une URL,
+un nom d'utilisateur et un mot de passe
+
+2. Exécuter des Requêtes SQL : SELECT, INSERT, UPDATE, ...
+
+3. Manipuler des Résultats : On récupère les résultats de nos
+requêtes sous forme de ResultSet que l'on peut parcourir et manipuler
+dans notre code Java
+
+4. Gérer des Transactions : afin de s'assurer de l'atomicité de nos
+opérations sur notre BD (TOUT ou RIEN)
+
+5. Gérer les erreurs : Lorsqu'une erreur survient lors de l'exécution
+d'une requête ou de la gestion de la connexion, JDBC lève une
+SQLException.
+
+#################################################################################
+
+### 4. Pourquoi JDBC est-il important ?
+
+Car il est indépendant de la base de données utilisée.
+Grâce à la couche d'abstraction offerte, le code peut
+intéragir avec n'importe quelle BD relationnelle, tant que
+le pilote JDBC adapté est possédé.
+
+#################################################################################
+
+### 5. Quelques composants importants de JDBC :
+
+1. DriverManager : C'est la classe centrale pour gérer les pilotes
+JDBC. Elle établit la connexion avec la base de données.
+
+2. Connection : Représente une connexion active avec une base de données.
+
+3. Statement : Utilisé pour exécuter des requêtes SQL statiques.
+
+4. PreparedStatement : Une sous-classe de Statement, qui permet
+d'exécuter des requêtes SQL paramétrées, ce qui est plus sécurisé
+et plus performant.
+
+5. ResultSet : Représente les résultats d'une requête SQL,
+qui peuvent être parcourus pour lire les données.
+
+#################################################################################
+
+### 6. Travail avec les Métadonnées
+
+Les métadonnées de base de données fournissent des informations
+sur la structure de la base de données, comme les noms des tables,
+les colonnes, les types de données, etc. JDBC permet d'accéder à
+ces informations à travers les objets DatabaseMetaData et
+ResultSetMetaData. Ces objets sont utiles pour écrire des
+applications génériques qui peuvent travailler avec différentes
+bases de données sans connaissance préalable de leur structure
+spécifique.
+
+#################################################################################
+
+### 7. JDBC et les Interfaces
+
+L'une des forces de JDBC est son design basé sur les interfaces.
+Cela signifie que le code JDBC est en grande partie indépendant de la base de données sous-jacente.
+
+En pratique :
+
+Pilotes JDBC : Pour se connecter à une base de données spécifique
+(par exemple, MySQL, PostgreSQL, Oracle), tu dois utiliser un pilote JDBC approprié.
+Ce pilote implémente les interfaces JDBC et gère les détails spécifiques de la communication
+avec la base de données.
+
+Portabilité du Code : Comme ton code se base sur des interfaces standard
+(comme Connection, Statement, ResultSet), il peut fonctionner avec n'importe quelle
+base de données relationnelle, tant que tu changes simplement le pilote JDBC utilisé.
+Cela te permet de développer des applications qui sont plus facilement transférables
+d'une base de données à une autre, simplement en changeant le pilote utilisé et les paramètres
+de connexion.
+
+#################################################################################
+
+### 8. Types de Pilotes JDBC
+
+Il existe 4 principaux types de pilotes JDBC, chacun ayant ses propres caractéristiques :
+
+    Pilote de Type 1 : Pilote JDBC-ODBC (Pont JDBC-ODBC)
+        - Description : Ce pilote utilise un pont pour convertir les appels JDBC en appels ODBC,
+          qui sont ensuite traduits en requêtes spécifiques à la base de données.
+
+        - Avantages : Facile à mettre en place si un pilote ODBC est déjà disponible pour
+          la base de données cible.
+
+        - Inconvénients : Lent en raison des multiples niveaux de traduction
+          (JDBC -> ODBC -> Base de données).
+          Nécessite l'installation de pilotes ODBC sur le système client.
+          Ce type de pilote est obsolète et rarement utilisé aujourd'hui.
+
+        - Usage : Utilisé principalement dans des environnements de développement
+          ou pour accéder à des bases de données qui n'ont pas de pilote JDBC natif.
+
+    Pilote de Type 2 : Pilote Natif-Partiel (Partially Java Driver)
+        - Description : Ce pilote convertit les appels JDBC en appels natifs spécifiques à
+          la base de données en utilisant une bibliothèque native (C ou C++).
+
+        - Avantages : Plus performant que le pilote de Type 1 car il évite la couche ODBC.
+
+        - Inconvénients : Nécessite des bibliothèques natives spécifiques à chaque plateforme
+          (Windows, Linux, etc.), ce qui rend le déploiement plus complexe.
+          Dépend fortement du système d'exploitation.
+
+        - Usage : Utilisé dans des environnements où la performance est cruciale, mais où
+          la base de données dispose de bibliothèques natives bien optimisées.
+
+    Pilote de Type 3 : Pilote Réseau Pur Java (Network Protocol Driver)
+        - Description : Ce pilote utilise des protocoles réseaux pour communiquer avec un
+          serveur middleware qui, à son tour, interagit avec la base de données.
+          Tout le code du pilote est en Java.
+
+        - Avantages : Indépendant du système d'exploitation car il est entièrement en Java.
+          Peut se connecter à différentes bases de données via le même pilote si le
+          serveur middleware le prend en charge.
+
+        - Inconvénients : Ajoute une couche supplémentaire avec le serveur middleware, ce
+          qui peut introduire de la latence.
+          La configuration est plus complexe.
+
+        - Usage : Utilisé dans des environnements d'entreprise où l'indépendance par rapport
+          au système d'exploitation et la connectivité à plusieurs bases de données
+          sont des priorités.
+
+    Pilote de Type 4 : Pilote Java Pur (Direct-to-Database Pure Java Driver)
+        - Description : Ce pilote convertit directement les appels JDBC en protocoles
+          spécifiques à la base de données. Il est entièrement écrit en Java et n'utilise
+          pas de bibliothèques natives.
+
+        - Avantages : Très performant et indépendant du système d'exploitation.
+          Plus facile à déployer puisque tout est en Java.
+          C'est le type de pilote le plus utilisé aujourd'hui.
+
+        - Inconvénients : Peut ne pas être disponible pour toutes les bases de données.
+
+        - Usage : C'est le choix privilégié pour la majorité des applications modernes.
+          Pratiquement toutes les bases de données populaires (MySQL, PostgreSQL, Oracle, etc.)
+          ont des pilotes Type 4.
+
+#################################################################################
+#################################################################################
+#################################################################################
+#################################################################################
+#################################################################################
+#################################################################################

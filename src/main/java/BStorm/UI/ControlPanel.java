@@ -9,7 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ControlPanel {
-    private String DbNamePosition = "";
+    private String dbNamePosition = "";
     private PanelState panelState = PanelState.HOME;
     private Connection connection = ConnectionFactory.createDBConnection2(ConnectionFactory.getServerURL());
     private final StatementFactory statementFactory = new StatementFactory(connection);
@@ -114,7 +114,7 @@ public class ControlPanel {
     private void getPanelStateOverview(PanelState panelState) {
         switch (panelState) {
             case HOME -> ConnectionFactory.getAllDb();
-            case IN_DATABASE -> statementFactory.getTableList(DbNamePosition);
+            case IN_DATABASE -> statementFactory.getTableList(dbNamePosition);
         }
     }
 
@@ -138,7 +138,7 @@ public class ControlPanel {
         sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez le nom de la table cible : "));
         String tableName = sc.nextLine();
-        statementFactory.getColumnList(DbNamePosition, tableName);
+        statementFactory.getColumnList(dbNamePosition, tableName);
         System.out.println(ColPrinter.brightBlue("Entrez le nom des colonnes cibles (col1, col2, ...) : "));
         String columnNames = sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez les valeurs à ajouter (val1, val2 & val3, val4 & ...): "));
@@ -165,7 +165,7 @@ public class ControlPanel {
         sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez le nom de la table cible : "));
         String tableName = sc.nextLine();
-        statementFactory.getColumnList(DbNamePosition, tableName);
+        statementFactory.getColumnList(dbNamePosition, tableName);
         System.out.println(ColPrinter.brightBlue("Entrez le nom des colonnes et des valeurs cibles : "));
         String columnNameAndValue = sc.nextLine();
         System.out.println(ColPrinter.brightBlue("Entrez la condition de selection : "));
@@ -206,13 +206,13 @@ public class ControlPanel {
         System.out.println(ColPrinter.brightRed("Entrez le nom de la base de données cible : "));
         String dbName = sc.nextLine();
         changeConnection(ConnectionFactory.getServerURL() + dbName);
-        this.DbNamePosition = dbName;
+        this.dbNamePosition = dbName;
         panelState = PanelState.IN_DATABASE;
     }
 
     private void goToHome() {
         changeConnection(ConnectionFactory.getServerURL());
-        this.DbNamePosition = "";
+        this.dbNamePosition = "";
         panelState = PanelState.HOME;
     }
 

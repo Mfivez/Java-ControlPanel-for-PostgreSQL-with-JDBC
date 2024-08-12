@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7d4fe8a-5a4b-45c3-81f5-be5fbcd3716b" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/JDBCControlPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/GenericRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/Enums/PanelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/Enums/PanelState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/JDBC/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/JDBC/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/JDBC/StatementFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/JDBC/StatementFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/JDBCControlPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/UI/ColPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/UI/ColPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/UI/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/UI/ControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/Utils/ColumnMetaData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/Utils/ColumnMetaData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BStorm/Utils/PrepStatementUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ControlPanel/Utils/PrepStatementUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/Entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/Entity/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/exercice1/ConnFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/exercice1/DemoJDBC.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +78,7 @@
       <recent name="C:\Users\fivez\Desktop\Travail\BStorm\Java-jdbc\JdbcTraining\untitled\src\main\java\BStorm" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JDBCControlPanel">
+  <component name="RunManager" selected="Application.main">
     <configuration name="JDBCControlPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ControlPanel.JDBCControlPanel" />
       <module name="untitled" />
@@ -122,8 +107,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JDBCControlPanel" />
         <item itemvalue="Application.main" />
+        <item itemvalue="Application.JDBCControlPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +133,7 @@
       <workItem from="1723391619843" duration="7071000" />
       <workItem from="1723462102501" duration="7241000" />
       <workItem from="1723469981564" duration="18000" />
-      <workItem from="1723470525417" duration="7224000" />
+      <workItem from="1723470525417" duration="8011000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -182,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723469993781</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="init">
+      <option name="closed" value="true" />
+      <created>1723477912299</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723477912299</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,7 +16,7 @@ Java et une base de données.
 ### 3. Que permet cette API :
 
 1. Se connecter à une BD en établissant une connexion, via une URL,
-un nom d'utilisateur et un mot de passe
+un nom d'user et un mot de passe
 
 2. Exécuter des Requêtes SQL : SELECT, INSERT, UPDATE, ...
 

@@ -11,7 +11,7 @@ import java.sql.*;
  * <p>Avant d'utiliser ces méthodes, assurez-vous de configurer le fichier {@code pom.xml} de Maven
  * en y ajoutant la dépendance nécessaire pour le pilote PostgreSQL JDBC.</p>
  */
-public class ConnectionFactory {
+public abstract class ConnectionFactory {
     private static final String SERVER_URL = "jdbc:postgresql://localhost:5432/";
     private static final String DB_URL = SERVER_URL + "training_jdbc_bd";
     private static final String DB_PG_URL = "jdbc:postgresql://localhost:5432/postgres";
@@ -93,11 +93,9 @@ public class ConnectionFactory {
     public static Connection createDBConnection2() {
         try {
             System.out.println(ColPrinter.brightGreen("Connection status :") + " Connection Established");
-            Connection connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-            return connection;
+            return DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
-            String errorMessage = "Data access failed: " + e.getMessage() + " (SQLState: " + e.getSQLState() + ", ErrorCode: " + e.getErrorCode() + ")";
-            throw new RuntimeException(errorMessage, e);
+            throw new RuntimeException(buildSqlErrorMessage(e), e);
         }
     }
 
@@ -147,8 +145,7 @@ public class ConnectionFactory {
             statement.executeUpdate("CREATE DATABASE " + dbName);
             System.out.println("Database successfully created");
         } catch (SQLException e) {
-            String errorMessage = "Data access failed: " + e.getMessage() + " (SQLState: " + e.getSQLState() + ", ErrorCode: " + e.getErrorCode() + ")";
-            throw new RuntimeException(errorMessage, e);
+            throw new RuntimeException(ConnectionFactory.buildSqlErrorMessage(e), e);
         }
     }
 

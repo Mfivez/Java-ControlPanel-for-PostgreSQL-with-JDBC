@@ -1,8 +1,8 @@
-package BStorm.UI;
+package ControlPanel.UI;
 
-import BStorm.Enums.PanelState;
-import BStorm.JDBC.ConnectionFactory;
-import BStorm.JDBC.StatementFactory;
+import ControlPanel.Enums.PanelState;
+import ControlPanel.JDBC.ConnectionFactory;
+import ControlPanel.JDBC.StatementFactory;
 
 import java.sql.Connection;
 import java.util.InputMismatchException;

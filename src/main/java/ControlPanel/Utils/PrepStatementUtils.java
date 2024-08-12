@@ -1,4 +1,4 @@
-package BStorm.Utils;
+package ControlPanel.Utils;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

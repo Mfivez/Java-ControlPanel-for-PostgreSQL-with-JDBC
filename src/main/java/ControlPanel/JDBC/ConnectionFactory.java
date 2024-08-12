@@ -1,6 +1,6 @@
-package BStorm.JDBC;
+package ControlPanel.JDBC;
 
-import BStorm.UI.ColPrinter;
+import ControlPanel.UI.ColPrinter;
 
 import java.sql.*;
 

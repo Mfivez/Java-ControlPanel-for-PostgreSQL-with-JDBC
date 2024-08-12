@@ -1,4 +1,4 @@
-package BStorm.Utils;
+package ControlPanel.Utils;
 
 public class ColumnMetaData {
     private final String columnType;

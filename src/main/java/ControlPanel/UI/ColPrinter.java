@@ -1,4 +1,4 @@
-package BStorm.UI;
+package ControlPanel.UI;
 
 
 public class ColPrinter {

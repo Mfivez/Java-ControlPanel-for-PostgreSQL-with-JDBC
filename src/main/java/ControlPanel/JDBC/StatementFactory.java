@@ -1,15 +1,12 @@
-package BStorm.JDBC;
+package ControlPanel.JDBC;
 
-import BStorm.UI.ColPrinter;
-import BStorm.Utils.ColumnMetaData;
-import BStorm.Utils.PrepStatementUtils;
+import ControlPanel.UI.ColPrinter;
+import ControlPanel.Utils.ColumnMetaData;
+import ControlPanel.Utils.PrepStatementUtils;
 
 import java.sql.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
-//TODO : Créer pour les requêtes préparées une classe utilitaire qui gère la transformation des String en type
-// correspondant au besoin des colonnes.
 
 /**
  * La classe StatementFactory est une classe utilitaire pour interagir avec une base de données.

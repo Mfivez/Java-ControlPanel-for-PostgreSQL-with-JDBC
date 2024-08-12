@@ -9,7 +9,15 @@ public class Address {
     public Address() {}
 
 
-    public Address(String street, String city) {
+    public Address(int id, int userId,String street, String city) {
+        this.id = id;
+        this.userId = userId;
+        this.street = street;
+        this.city = city;
+    }
+
+    public Address(int userId,String street, String city) {
+        this.userId = userId;
         this.street = street;
         this.city = city;
     }

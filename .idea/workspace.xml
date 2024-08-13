@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7d4fe8a-5a4b-45c3-81f5-be5fbcd3716b" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/GenericRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/DAO/AddressRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jdbcTraining/Exercices/demo/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +129,7 @@
       <workItem from="1723391619843" duration="7071000" />
       <workItem from="1723462102501" duration="7241000" />
       <workItem from="1723469981564" duration="18000" />
-      <workItem from="1723470525417" duration="8011000" />
+      <workItem from="1723470525417" duration="8055000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -175,7 +171,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723477912299</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="init">
+      <option name="closed" value="true" />
+      <created>1723478628411</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723478628411</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,6 @@
-package jdbcTraining.Exercices.demo.DAO;
+package jdbcTraining.demo.DAO;
 
-import jdbcTraining.Exercices.demo.Entity.User;
+import jdbcTraining.demo.Entity.User;
 
 import java.util.List;
 

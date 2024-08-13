@@ -1,4 +1,4 @@
-package jdbcTraining.Exercices.demo.Entity;
+package jdbcTraining.demo.Entity;
 
 public class User {
     private int id;

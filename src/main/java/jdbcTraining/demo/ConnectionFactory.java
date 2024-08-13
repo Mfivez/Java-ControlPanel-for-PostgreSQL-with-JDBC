@@ -1,7 +1,7 @@
-package jdbcTraining.Exercices.demo;
+package jdbcTraining.demo;
 
-import jdbcTraining.Exercices.demo.Entity.Address;
-import jdbcTraining.Exercices.demo.Entity.User;
+import jdbcTraining.demo.Entity.Address;
+import jdbcTraining.demo.Entity.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

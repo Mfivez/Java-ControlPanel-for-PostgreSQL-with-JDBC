@@ -1,53 +1,51 @@
-package jdbcTraining.Exercices.demo.DAO;
+package jdbcTraining.demo.DAO;
 
 import ControlPanel.UI.ColPrinter;
-import jdbcTraining.Exercices.demo.ConnectionFactory;
-import jdbcTraining.Exercices.demo.Entity.Address;
+import jdbcTraining.demo.ConnectionFactory;
+import jdbcTraining.demo.Entity.User;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddressDAO implements AddressRepository{
+public class UserDAO implements UserRepository {
 
     @Override
-    public List<Address> getAll() {
-        List<Address> address = new ArrayList<>();
+    public List<User> getAll() {
+        List<User> users = new ArrayList<>();
         try (
                 Connection connection = ConnectionFactory.getConnection();
                 Statement statement = connection.createStatement();
-                ResultSet rs = statement.executeQuery("SELECT * FROM address")
+                ResultSet rs = statement.executeQuery("SELECT * FROM \"user\"")
         ) {
             while(rs.next()) {
-                address.add(new Address(
+                users.add(new User(
                         rs.getInt("id"),
-                        rs.getInt("user_id"),
-                        rs.getString("street"),
-                        rs.getString("city")));
+                        rs.getString("name"),
+                        rs.getString("email") ));
             }
-            return address;
+            return users;
         } catch (SQLException e) {
             throw new RuntimeException(ConnectionFactory.buildSqlErrorMessage(e), e);
         }
     }
 
     @Override
-    public Address getOne(int id) {
+    public User getOne(int id) {
         try (
                 Connection conn = ConnectionFactory.getConnection();
-                PreparedStatement ps = conn.prepareStatement("SELECT * FROM address WHERE id = ?");
+                PreparedStatement ps = conn.prepareStatement("SELECT * FROM \"user\" WHERE id = ?");
         ) {
             ps.setInt(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return new Address(
+                    return new User(
                             rs.getInt("id"),
-                            rs.getInt("user_id"),
-                            rs.getString("street"),
-                            rs.getString("city"));
+                            rs.getString("name"),
+                            rs.getString("email"));
                 }
             }
-            System.out.println(ColPrinter.brightRed("Exception: Il n'existe pas d'addresse avec l'id " + id));
+            System.out.println(ColPrinter.brightRed("Exception: Il n'existe pas d'utilisateur avec l'id " + id));
             return null;
         } catch (SQLException e) {
             throw new RuntimeException(ConnectionFactory.buildSqlErrorMessage(e), e);
@@ -58,7 +56,7 @@ public class AddressDAO implements AddressRepository{
     public boolean delete(int id) {
         try (
                 Connection conn = ConnectionFactory.getConnection();
-                PreparedStatement ps = conn.prepareStatement("DELETE FROM address WHERE id = ?");
+                PreparedStatement ps = conn.prepareStatement("DELETE FROM \"user\" WHERE id = ?");
         ) {
             ps.setInt(1, id);
             return ps.executeUpdate() > 0;
@@ -68,14 +66,13 @@ public class AddressDAO implements AddressRepository{
     }
 
     @Override
-    public boolean insert(Address address) {
+    public boolean insert(User user) {
         try (
                 Connection conn = ConnectionFactory.getConnection();
-                PreparedStatement ps = conn.prepareStatement("INSERT INTO address (user_id, street, city) VALUES (?, ?, ?)");
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO \"user\" (name, email) VALUES (?, ?)");
         ) {
-            ps.setInt(1, address.getUserId());
-            ps.setString(2, address.getStreet());
-            ps.setString(3, address.getCity());
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             throw new RuntimeException(ConnectionFactory.buildSqlErrorMessage(e), e);
@@ -83,18 +80,19 @@ public class AddressDAO implements AddressRepository{
     }
 
     @Override
-    public boolean update(int userId, Address address) {
+    public boolean update(int id, User user) {
         try (
                 Connection conn = ConnectionFactory.getConnection();
-                PreparedStatement ps = conn.prepareStatement("UPDATE address SET street = ?, city = ? WHERE user_id = ?");
+                PreparedStatement ps = conn.prepareStatement("UPDATE \"user\" SET name = ?, email = ? WHERE id = ?");
         ) {
-            ps.setString(1, address.getStreet());
-            ps.setString(2, address.getCity());
-            ps.setInt(3, userId);
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getEmail());
+            ps.setInt(3, user.getId());
             return ps.executeUpdate() > 0;
 
         } catch (SQLException e) {
             throw new RuntimeException(ConnectionFactory.buildSqlErrorMessage(e), e);
         }
     }
+
 }

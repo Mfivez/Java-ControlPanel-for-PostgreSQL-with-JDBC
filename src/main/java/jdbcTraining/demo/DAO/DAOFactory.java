@@ -1,4 +1,4 @@
-package jdbcTraining.Exercices.demo.DAO;
+package jdbcTraining.demo.DAO;
 
 public abstract class DAOFactory {
 

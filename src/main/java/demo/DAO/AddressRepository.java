@@ -1,19 +1,17 @@
-package jdbcTraining.demo.DAO;
+package demo.DAO;
 
-import jdbcTraining.demo.Entity.Address;
+import demo.Models.Address;
 
 import java.util.List;
 
 public interface AddressRepository {
-
     List<Address> getAll();
 
     Address getOne(int id);
 
-    boolean delete(int id );
-
     boolean insert(Address address);
 
-    boolean update(int id, Address address );
+    boolean update(int id, Address address);
 
+    boolean delete(int id);
 }

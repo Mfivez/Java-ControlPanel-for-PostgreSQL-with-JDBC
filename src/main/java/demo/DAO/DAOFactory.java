@@ -1,6 +1,6 @@
 package demo.DAO;
 
-public abstract class DAOFactory {
+public interface DAOFactory {
     public static final UserRepository user = new UserDAO();
     public static final AddressRepository address = new AddressDAO();
 }

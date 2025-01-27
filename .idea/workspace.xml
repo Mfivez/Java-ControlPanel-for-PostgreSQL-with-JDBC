@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7d4fe8a-5a4b-45c3-81f5-be5fbcd3716b" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/ConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/AddressDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/AddressRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/DAOFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/Models/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/demo/Models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ToDelete.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/ConnectionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/AddressDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/AddressRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/DAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/GenericRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/DAO/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/Entity/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/Entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jdbcTraining/demo/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DAO/AddressDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/AddressDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/DAO/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/DAO/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/demo/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +53,14 @@
   "keyToString": {
     "Application.JDBCControlPanel.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.ToDelete.executor": "Run",
     "Application.demo.main.executor": "Run",
     "Application.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fivez/Desktop/Travail/BStorm/Java/JDBC/Projets/ControlPanelForPG-JDBC",
+    "last_opened_file_path": "C:/Users/fivez/Desktop/Formations/BStorm/Java/JDBC/Projets/ControlPanelForPG-JDBC",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -142,14 +128,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -164,7 +142,14 @@
       <workItem from="1723462102501" duration="7241000" />
       <workItem from="1723469981564" duration="18000" />
       <workItem from="1723470525417" duration="8055000" />
-      <workItem from="1723531706634" duration="17048000" />
+      <workItem from="1723531706634" duration="20933000" />
+      <workItem from="1723906219913" duration="1256000" />
+      <workItem from="1724060069475" duration="332000" />
+      <workItem from="1725350864760" duration="202000" />
+      <workItem from="1725351073961" duration="34000" />
+      <workItem from="1725351114310" duration="7000" />
+      <workItem from="1727553040981" duration="5000" />
+      <workItem from="1728562985835" duration="7000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -230,7 +215,23 @@
       <option name="project" value="LOCAL" />
       <updated>1723531892382</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="init">
+      <option name="closed" value="true" />
+      <created>1723554626014</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723554626014</updated>
+    </task>
+    <task id="LOCAL-00010" summary="init">
+      <option name="closed" value="true" />
+      <created>1723554673451</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723554673451</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
